@@ -1,0 +1,36 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in Page</title>
+</head>
+<body>
+    
+    <div class = "container1">
+        <h1>Dolphin CRM</h1>
+    </div>
+    
+
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST">
+            <label for="email">Email address:</label>
+            <input id="emailInput" type="text" id="email" name="email" placeholder="something@example.com"><br><br>
+            <label for="pword">Password:</label>
+            <input id="pwdInput" type="password" id="pword" name="pword" placeholder="password"><br><br>
+            <button id="loginBtn" type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <!-- ?php
+    echo "<p> . $_SESSION['email'] . </p>"
+    echo "<p> . $_SESSION['pwd'] . </p>"
+    ?>  -->
+</body>
+<script src="script.js"></script>
+<footer> Copyright &copy; 2023 Dolphin CRM</footer>
+</html>
