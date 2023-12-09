@@ -7,16 +7,21 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in Page</title>
-    <h1>Dolphin CRM</h1>
 </head>
 <body>
+    
+    <div class = "container1">
+        <h1>Dolphin CRM</h1>
+    </div>
+    
+
     <div class="container">
         <h2>Login</h2>
         <form method="POST">
             <label for="email">Email address:</label>
-            <input id="emailInput" type="text" id="email" name="email"><br><br>
+            <input id="emailInput" type="text" id="email" name="email" placeholder="something@example.com"><br><br>
             <label for="pword">Password:</label>
-            <input id="pwdInput" type="password" id="pword" name="pword"><br><br>
+            <input id="pwdInput" type="password" id="pword" name="pword" placeholder="password"><br><br>
             <button id="loginBtn" type="submit">Login</button>
         </form>
         <p id="message"></p>

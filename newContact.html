@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New User Input</title>
+    <title>Create New Contact</title>
 </head>
-
 <body>
     <header>
         <div class = "container">
@@ -16,27 +15,38 @@
 
     <section>
         <div class = "container1">
-            <h2>New User</h2>
+            <h2>New Contact</h2>
         </div>
     </section>
 
     <main>
         <div class = "container">
             <form method="POST">
+                <label for="title">Title</label>
+                <select name="title" id="title">
+                    <option value="mr">Mr</option>
+                    <option value="ms">Ms</option>
+                    <option value="mrs">Mrs</option>
+                    <option value="dr">Dr</option>
+                </select>
                 <label for="fname">First Name</label>
                 <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
                 <label for="lname">First Name</label>
                 <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
-                <label for="email">Email address:</label>
+                <label for="email">Email</label>
                 <input id="email" type="text" name="email" placeholder="    something@example.com"><br><br>
-                <label for="pword">Password:</label>
-                <input id="pword" type="password" name="pword" placeholder="    password"><br><br>
-                <label for="role">Role</label>
-                <select name="role" id="role">
-                    <option value="member">Member</option>
-                    <option value="admin">Admin</option>
+                <label for="phone">Telephone:</label>
+                <input id="phone" type="text" name="phone" placeholder="    10 digit phone number"><br><br>
+                <label for="company">Company</label>
+                <input id="company" type="text" name="company"><br><br>
+                <label for="work">Type</label>
+                <select name="work" id="work">
+                    <option value="salesLead">Sales Lead</option>
+                    <option value="support">Support</option>
                 </select>
-                <button id="saveUserBtn" type="submit">Save</button>
+                <label for="assignedTo">Assigned To</label>
+                <input id="assignedTo" type="text" name="assignedTo" placeholder="I do not know what to do for this part,  please fix it for me"><br><br>
+                <button id="saveContactBtn" type="submit">Save</button>
             </form>
         </div>
     </main>
