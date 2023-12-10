@@ -7,30 +7,38 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in Page</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="script.js"></script>
 </head>
 <body>
+<div class="container">
     
-    <div class = "container1">
+    <header>
         <h1>Dolphin CRM</h1>
-    </div>
+    </header>
     
-
-    <div class="container">
+    <main>
         <h2>Login</h2>
-        <form method="POST">
-            <label for="email">Email address:</label>
-            <input id="emailInput" type="text" id="email" name="email" placeholder="something@example.com"><br><br>
-            <label for="pword">Password:</label>
-            <input id="pwdInput" type="password" id="pword" name="pword" placeholder="password"><br><br>
+            <form method="POST">
+            <!--<label for="email">Email address:</label>-->
+            <input id="emailInput" type="text" id="email" name="email" placeholder="  Email Address"><br><br>
+            <!--<label for="pword">Password:</label>-->
+            <input id="pwdInput" type="password" id="pword" name="pword" placeholder="  Password"><br><br>
             <button id="loginBtn" type="submit">Login</button>
         </form>
         <p id="message"></p>
-    </div>
+    </main>
+    
+    <footer>
+        <hr>
+        Copyright &copy; 2023 Dolphin CRM
+    </footer>
     <!-- ?php
     echo "<p> . $_SESSION['email'] . </p>"
     echo "<p> . $_SESSION['pwd'] . </p>"
     ?>  -->
+</div>
 </body>
-<script src="script.js"></script>
-<footer> Copyright &copy; 2023 Dolphin CRM</footer>
+
+
 </html>
