@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Input</title>
+</head>
+
+<body>
+    <header>
+        <div class = "container">
+            <h1>Dolphin CRM</h1>
+        </div>
+    </header>
+
+
+    <section>
+        <div class = "container1">
+            <h2>New User</h2>
+        </div>
+    </section>
+
+    <main>
+        <div class = "container">
+            <form method="POST">
+                <label for="fname">First Name</label>
+                <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
+                <label for="lname">First Name</label>
+                <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
+                <label for="email">Email address:</label>
+                <input id="email" type="text" name="email" placeholder="    something@example.com"><br><br>
+                <label for="pword">Password:</label>
+                <input id="pword" type="password" name="pword" placeholder="    password"><br><br>
+                <label for="role">Role</label>
+                <select name="role" id="role">
+                    <option value="member">Member</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button id="saveUserBtn" type="submit">Save</button>
+            </form>
+        </div>
+    </main>
+
+    <aside>
+        <div class = "container">
+            <div>
+                <a href="./dashboard.html">Home</a>
+            </div>
+            <div>
+                <a href="./newContact.html">New Contact</a>
+            </div>
+            <div>
+                <a href="./userList.html">Users</a>
+            </div>
+            <div>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
