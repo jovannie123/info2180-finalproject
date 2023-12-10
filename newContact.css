@@ -6,7 +6,7 @@ body{
     padding: 0;
 }
 
-.container{
+.container5{
     display: grid;
     grid-template-columns: 15fr 75fr;
     grid-template-rows: 8vh 92vh;
@@ -76,7 +76,7 @@ main .form{
     padding: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     border-radius: 5px;
 }
@@ -87,38 +87,27 @@ main input{
     width: 300px;
 }
 
-.fname{
+main select{
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+}
+
+#title{
     grid-column: 1/2;
     grid-row: 1/2;
+    border-radius: 5px;
+    height: 30px;
+    width: 55px;
 }
 
-.lname{
+.saveContactBtn{
     grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-.email{
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-.pword{
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-
-.role{
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.saveUserBtn{
-    grid-column: 2/3;
-    grid-row: 4/5;
+    grid-row: 6/7;
     justify-self: end;
 }
 
-#saveUserBtn{
+#saveContactBtn{
     background-color: #3f00ff;
     border-radius: 5px;
     color: white;
@@ -128,12 +117,40 @@ main input{
     width: 80px;
 }
 
-#saveUserBtn:hover{
+#saveContactBtn:hover{
     background-color: #806bf8;
 }
 
-#role{
-    border-radius: 5px;
-    height: 30px;
-    width: 300px;
+.fname{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.lname{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.email{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.phone{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.company{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.work{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.assignedTo{
+    grid-column: 1/2;
+    grid-row: 5/6;
 }
