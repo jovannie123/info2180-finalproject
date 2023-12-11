@@ -40,12 +40,20 @@ main h2{
     font-weight: 800;
 }
 
-main input{
+#emailInput{
     width: 400px;
     height: 40px;
     border-radius: 5px;
+
 }
-main button{
+#pwdInput{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+
+}
+
+#loginBtn{
     width: 400px;
     height: 40px;
     border-radius: 5px;

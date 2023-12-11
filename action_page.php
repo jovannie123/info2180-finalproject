@@ -14,11 +14,11 @@ if (!$conn){
 }
 else{
     //Insert admin credentials
-    $adminEmail='admin@project2.com';
+    /*$adminEmail='admin@project2.com';
     $adminPwd='password123';
     $hashedAdminPwd = password_hash($adminPwd, PASSWORD_DEFAULT);
     $stmt= $conn-> prepare("IF NOT EXISTS(SELECT * FROM Users WHERE email='admin@project2.com', NULL , INSERT INTO Users(firstname,lastname,password,email,role,created_at) VALUES(admin,admin,'%$hashedAdminPwd%','%$adminEmail%',Admin,NOW())); ");
-    $stmt->execute();
+    $stmt->execute();*/
    //User Input 
     if(isset($POST["submit"])){
         $email= $POST["email"];

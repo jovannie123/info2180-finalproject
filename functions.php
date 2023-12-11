@@ -6,7 +6,7 @@ function emptyInput($email,$pwd){
         $empty= TRUE;
     }
     else{
-        $empty=FALSE
+        $empty=FALSE;
     }
     return $empty;
 
@@ -31,17 +31,8 @@ function invalidEmail($email, $conn){
     
 }
 
-function invalidPassword($email,$pwd){
-    $password = password_hash($pwd, PASSWORD_DEFAULT);
-    $stmt= $conn-> prepare("SELECT * FROM users WHERE email= :email;");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $pwdHashed= password_verify($password, $user['password'])
-    $result;
-
-    if (password_verify($password, $user['password'])!==true) {
+function invalidPassword($userPwd,$Inputpwd){
+    if ($userPwd!==$Inputpwd) {
         $result=true;
     } else {
         $result=false;
@@ -61,28 +52,7 @@ function passwordContainsReqiredCharacters($pwd){
 
 }
 
-function loginUser($conn,$email,$pwd){
-    $password = password_hash($pwd, PASSWORD_DEFAULT);
-    $stmt= $conn-> prepare("SELECT * FROM users WHERE email= :email;");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $pwdHashed= password_verify($password, $user['password'])
-    $result;
-
-    if (invalidEmail($conn,$email,$pwd)===false) {
-        if (password_verify($password, $user['password'])===true) {
-            session_start();
-            $_SESSION["email"]=$user['email'];
-            $_SESSION["id"]=$user['id'];
-            header("location: ../dashboard.html")
-        }
-    }
-        
-         else {
-            $result=false;
-    }
-}
+    
 
 
