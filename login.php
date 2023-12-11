@@ -1,34 +1,43 @@
 <?php
-//require_once 'functions.php'
+require_once 'functions.php';
 //Connection
 $host = 'localhost';
-$username = 'user';
-$password = 'pass123';
+$username = 'root';
+$password = '';
 $dbname = 'dolphin_crm';
 
+
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (!$conn){
     
-    die("Could not connect to the the Databse");
+    die("Could not connect to the Database");
+    
+    $conn = null;
 }
 else{
-    //Insert admin credentials
-    header("location: dashboard.html");
-    $adminEmail='admin@project2.com';
-    $adminPwd='password123';
-    $hashedAdminPwd = password_hash($adminPwd, PASSWORD_DEFAULT);
-    $stmt= $conn-> prepare("IF NOT EXISTS(SELECT * FROM Users WHERE email='admin@project2.com', NULL , INSERT INTO Users(firstname,lastname,password,email,role,created_at) VALUES(admin,admin,'%$hashedAdminPwd%','%$adminEmail%',Admin,NOW())); ");
-    $stmt->execute();
    //User Input 
-    if(isset($POST["submit"])){
-        $email= $POST["email"];
-        $pwd= $POST["pwd"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email= $_POST["email"];
+        $pwd= $_POST["pword"];
+        
 
+        //Sanitize
+        $emailSanitize = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $pwdSanitize=filter_var($pwd, FILTER_SANITIZE_STRING);
+        //$hashedPwd = password_hash($pwdSanitize, PASSWORD_DEFAULT);
+        
 
-        $emailSanitize = filter_var($emailSanitize, FILTER_SANITIZE_EMAIL);
-        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+        //Get hashed User input password 
+
+        $Inputstmt = $conn->prepare("SELECT PASSWORD(?);");
+        $Inputstmt->bindParam(1, $pwdSanitize);
+        $Inputstmt->execute();
+        $Inputhashed = $Inputstmt->fetch(PDO::FETCH_ASSOC);
+        $inputHashedPwd=$Inputhashed["PASSWORD('$pwdSanitize')"];
+
 
         //Prepared statement to prevent SQL injection
         $stmt = $conn->prepare("SELECT id, email, password FROM Users WHERE email = ?");
@@ -37,18 +46,51 @@ else{
 
         // Fetch the user from the database
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $userPwd=$user['password'];
+        
 
         // Check if the user exists and the password is correct
-        if ($user && password_verify($hashedPwd, $user['password'])) {
+        if (true) {
             // Successful login
-            echo json_encode(['success' => true, 'email' => $user['email']]);
+            //echo json_encode(['success' => true, 'email' => $user['email']]);
+            //echo("Login Success!!!");
+            //Authentication
+            if(emptyInput($emailSanitize,$pwdSanitize)){
+                echo("Empty");
+                //header("location: login.html")
+                //exit();
+            }
+            elseif(invalidEmail($emailSanitize,$conn)){
+                echo("Invalid Email");
+                //header("location: login.html")
+                //exit();
+            }
+            elseif(invalidPassword($userPwd,$inputHashedPwd)){
+                echo("Invalid Password");
+                //header("location: login.html")
+                //exit();
+            }
+            /*if(passwordContainsReqiredCharacters($pwdSanitize)){
+                echo("Not Enough Characters");
+                //header("location: login.html")
+                //exit();
+            }*/
+
+            else{
+                //User logged
+                echo("Dashboard");
+                header("location: dashboard.html");
+            } 
             
         } else {
             // Invalid credentials
-            echo json_encode(['success' => false]);
+            echo("Credentials did not match.");
+            header("location: login.html");
+            exit();
         }
-    } catch (PDOException $e) {
-        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    } 
+    else{
+        die("Invalid Form Method");
     }
 
     // Close the connection
