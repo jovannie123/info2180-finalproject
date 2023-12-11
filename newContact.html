@@ -4,68 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Contact</title>
+    <link rel="stylesheet" href="newContact.css">
 </head>
 <body>
+<div class="container5">
     <header>
-        <div class = "container">
-            <h1>Dolphin CRM</h1>
-        </div>
+        <h1>Dolphin CRM</h1>
     </header>
 
-
-    <section>
-        <div class = "container1">
-            <h2>New Contact</h2>
-        </div>
-    </section>
-
     <main>
+        <h2>New Contact</h2>
         <div class = "container">
-            <form method="POST">
-                <label for="title">Title</label>
-                <select name="title" id="title">
-                    <option value="mr">Mr</option>
-                    <option value="ms">Ms</option>
-                    <option value="mrs">Mrs</option>
-                    <option value="dr">Dr</option>
-                </select>
-                <label for="fname">First Name</label>
-                <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
-                <label for="lname">First Name</label>
-                <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
-                <label for="email">Email</label>
-                <input id="email" type="text" name="email" placeholder="    something@example.com"><br><br>
-                <label for="phone">Telephone:</label>
-                <input id="phone" type="text" name="phone" placeholder="    10 digit phone number"><br><br>
-                <label for="company">Company</label>
-                <input id="company" type="text" name="company"><br><br>
-                <label for="work">Type</label>
-                <select name="work" id="work">
-                    <option value="salesLead">Sales Lead</option>
-                    <option value="support">Support</option>
-                </select>
-                <label for="assignedTo">Assigned To</label>
-                <input id="assignedTo" type="text" name="assignedTo" placeholder="I do not know what to do for this part,  please fix it for me"><br><br>
-                <button id="saveContactBtn" type="submit">Save</button>
+            <form method="POST" class="form">
+                <div class="title">
+                    <label for="title">Title</label>
+                    <br>
+                    <select name="title" id="title">
+                        <option value="mr">Mr</option>
+                        <option value="ms">Ms</option>
+                        <option value="mrs">Mrs</option>
+                        <option value="dr">Dr</option>
+                    </select> <br><br>
+                </div>
+                <div class="fname">
+                    <label for="fname">First Name</label>
+                    <br>
+                    <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
+                </div>
+                <div class="lname">
+                    <label for="lname">Last Name</label>
+                    <br>
+                    <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <br>
+                    <input id="email" type="text" name="email" placeholder="  something@example.com"><br><br>
+                </div>
+                <div class="phone">
+                    <label for="phone">Telephone:</label>
+                    <br>
+                    <input id="phone" type="text" name="phone" placeholder="    10 digit phone number"><br><br>
+                </div>
+                <div class="company">
+                    <label for="company">Company</label>
+                    <br>
+                    <input id="company" type="text" name="company"><br><br>
+                </div>
+                <div class="work">
+                    <label for="work">Type</label>
+                    <br>
+                    <select name="work" id="work">
+                        <option value="salesLead">Sales Lead</option>
+                        <option value="support">Support</option>
+                    </select> <br><br>
+                </div>
+                <div class="assignedTo">
+                    <label for="assignedTo">Assigned To</label>
+                    <br>
+                    <input id="assignedTo" type="text" name="assignedTo" placeholder="I do not know what to do for this part,  please fix it for me"><br><br>
+                </div>
+                <div class="saveContactBtn">
+                    <button id="saveContactBtn" type="submit">Save</button>
+                </div>
             </form>
         </div>
     </main>
 
     <aside>
-        <div class = "container">
-            <div>
-                <a href="./dashboard.html">Home</a>
-            </div>
-            <div>
-                <a href="./newContact.html">New Contact</a>
-            </div>
-            <div>
-                <a href="./userList.html">Users</a>
-            </div>
-            <div>
-                <button id="logoutBtn">Logout</button>
-            </div>
+        <div class = "side">
+            <br><br>
+            <a href="./dashboard.html">Home</a>
+            <br><br>
+            <a href="./newContact.html">New Contact</a>
+            <br><br>
+            <a href="./userList.html">Users</a>
+            <br><br>
+        </div>
+        <hr>
+        <div>
+            <button id="logoutBtn">Logout</button>
         </div>
     </aside>
+</div>
 </body>
 </html>

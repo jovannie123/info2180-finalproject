@@ -4,58 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New User Input</title>
+    <link rel="stylesheet" href="newUser.css">
 </head>
 
 <body>
-    <header>
-        <div class = "container">
+    
+
+    <div class = "container">
+        <header>
             <h1>Dolphin CRM</h1>
-        </div>
-    </header>
+        </header>
 
-
-    <section>
-        <div class = "container1">
+        <main>
             <h2>New User</h2>
-        </div>
-    </section>
-
-    <main>
-        <div class = "container">
-            <form method="POST">
-                <label for="fname">First Name</label>
-                <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
-                <label for="lname">First Name</label>
-                <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
-                <label for="email">Email address:</label>
-                <input id="email" type="text" name="email" placeholder="    something@example.com"><br><br>
-                <label for="pword">Password:</label>
-                <input id="pword" type="password" name="pword" placeholder="    password"><br><br>
-                <label for="role">Role</label>
-                <select name="role" id="role">
-                    <option value="member">Member</option>
-                    <option value="admin">Admin</option>
-                </select>
-                <button id="saveUserBtn" type="submit">Save</button>
+            <form method="POST" class="form">
+                <div class="fname">
+                    <label for="fname">First Name</label>
+                    <br>
+                    <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
+                </div>
+                <div class="lname">
+                    <label for="lname">Last Name</label>
+                    <br>
+                    <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
+                </div>
+                <div class="email">
+                    <label for="email">Email address:</label>
+                    <br>
+                    <input id="email" type="text" name="email" placeholder="  something@example.com"><br><br>
+                </div>
+                <div class="pword">
+                    <label for="pword">Password:</label>
+                    <br>
+                    <input id="pword" type="password" name="pword" placeholder="    Password"><br><br>
+                </div>
+                <div class="role">
+                    <label for="role">Role</label>
+                    <br>
+                    <select name="role" id="role">
+                        <option value="member">Member</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="saveUserBtn">
+                    <button id="saveUserBtn" type="submit">Save</button>
+                </div>
             </form>
-        </div>
-    </main>
+        </main>
 
-    <aside>
-        <div class = "container">
-            <div>
+        <aside>
+            <div class = "side">
+                <br><br>
                 <a href="./dashboard.html">Home</a>
-            </div>
-            <div>
+                <br><br>
                 <a href="./newContact.html">New Contact</a>
-            </div>
-            <div>
+                <br><br>
                 <a href="./userList.html">Users</a>
+                <br><br>
             </div>
+            <hr>
             <div>
                 <button id="logoutBtn">Logout</button>
             </div>
-        </div>
-    </aside>
+        </aside>
+    </div>
 </body>
 </html>
