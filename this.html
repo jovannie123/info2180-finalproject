@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="contactList.css">
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+    <div class="container3">
+        <header>
+            <div class="container">
+                <h1>Dolphin CRM</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="container1">
+                <h2>Dashboard</h2>
+                <button id="addContactBtn">+ Add Contact</button>
+            </div>
+        </main>
+
+        <section>
+            <div class="contained">
+                <h3>Filter By:</h3>
+                <button id="allBtn">All</button>
+                <button id="salesBtn">Sales Leads</button>
+                <button id="supportBtn">Support</button>
+                <button id="assignBtn">Assigned to me</button>
+            </div>
+
+            <div class="container" id="contactList">
+                <h3>Contact List</h3>
+                <!-- Table should go here -->
+                <table id="contactTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Company</th>
+                            <th>Contact Type</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactTableBody">
+                        <!-- Contact data will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <aside>
+            <div class="side">
+                <h3>Navigation</h3>
+                <a href="./dashboard.html">Home</a>
+                <br><br>
+                <a href="./newContact.html">New Contact</a>
+                <br><br>
+                <a href="./userList.html">Users</a>
+                <br><br>
+            </div>
+            <hr>
+            <div>
+                <h3>Actions</h3>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- New Contact Form -->
+    <div id="newContactForm" style="display: none;">
+        <h2>Create a New Contact</h2>
+        <form id="contactForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required>
+
+            <label for="contactType">Type:</label>
+            <select id="contactType" name="contactType" required>
+                <option value="Sales Lead">Sales Lead</option>
+                <option value="Support">Support</option>
+            </select>
+
+            <label for="assignedTo">Assigned To:</label>
+            <select id="assignedTo" name="assignedTo" required>
+                <!-- Populate this dynamically with user names -->
+            </select>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
