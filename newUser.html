@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Input</title>
+    <link rel="stylesheet" href="newUser.css">
+</head>
+
+<body>
+    
+
+    <div class = "container">
+        <header>
+            <h1>Dolphin CRM</h1>
+        </header>
+
+        <main>
+            <h2>New User</h2>
+            <form method="POST" class="form" action="newUser.php">
+                <div class="fname">
+                    <label for="fname">First Name</label>
+                    <br>
+                    <input id="fname" type="text" name="fname" placeholder="    John"><br><br>
+                </div>
+                <div class="lname">
+                    <label for="lname">Last Name</label>
+                    <br>
+                    <input id="lname" type="text" name="lname" placeholder="    Brown"><br><br>
+                </div>
+                <div class="email">
+                    <label for="email">Email address:</label>
+                    <br>
+                    <input id="email" type="text" name="email" placeholder="  something@example.com"><br><br>
+                </div>
+                <div class="pword">
+                    <label for="pword">Password:</label>
+                    <br>
+                    <input id="pword" type="password" name="pword" placeholder="    Password"><br><br>
+                </div>
+                <div class="role">
+                    <label for="role">Role</label>
+                    <br>
+                    <select name="role" id="role">
+                        <option value="member">Member</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="saveUserBtn">
+                    <button id="saveUserBtn" type="submit">Save</button>
+                </div>
+            </form>
+            <p id="result"></p>
+        </main>
+
+        <aside>
+            <div class = "side">
+                <br><br>
+                <a href="./dashboardIndex.php">Home</a>
+                <br><br>
+                <a href="./newContact.html">New Contact</a>
+                <br><br>
+                <a href="./userList.html">Users</a>
+                <br><br>
+            </div>
+            <hr>
+            <div>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </aside>
+    </div>
+    <script src="newUser.js"></script>
+</body>
+
+</html>
